@@ -9,4 +9,14 @@ class Fan:
         self.__color = color
         self.__on = on
 
-    
+    @property
+    def speed(self):
+        return self.__speed
+
+    @speed.setter
+    def speed(self, new_speed):
+        if new_speed in (Fan.SLOW, Fan.MEDIUM, Fan.FAST):
+            self.__speed = new_speed
+        else:
+            raise TypeError("Invalid speed")
+
